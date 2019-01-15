@@ -32,10 +32,13 @@ RUN mkdir /var/run/clamav && \
     chmod 750 /var/run/clamav
 
 # Configure Clam AV...
+ADD ./*.conf /usr/local/etc/
 RUN chown clamav:clamav -R /usr/local/etc/
-ADD --chown=clamav:clamav ./*.conf /usr/local/etc/
-ADD --chown=clamav:clamav eicar.com /
-ADD --chown=clamav:clamav ./readyness.sh /
+
+ADD eicar.com /
+ADD ./readyness.sh /
+
+RUN chown clamav:clamav /eicar.com /readyness.sh
 
 USER 1000
 
