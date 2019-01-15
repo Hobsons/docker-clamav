@@ -1,4 +1,4 @@
-FROM quay.io/ukhomeofficedigital/centos-base:latest
+FROM hobsonspipe/centos-base
 
 ENV CLAM_VERSION=0.99.4
 
@@ -38,8 +38,6 @@ ADD --chown=clamav:clamav eicar.com /
 ADD --chown=clamav:clamav ./readyness.sh /
 
 USER 1000
-
-VOLUME /var/lib/clamav
 
 COPY docker-entrypoint.sh /
 
