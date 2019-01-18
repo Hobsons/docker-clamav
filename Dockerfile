@@ -1,6 +1,6 @@
 FROM hobsonspipe/centos-base
 
-ENV CLAM_VERSION=0.99.4
+ENV CLAM_VERSION=0.101.1
 
 RUN yum update -y && \
     yum install -y gcc openssl-devel wget make
