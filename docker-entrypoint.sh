@@ -28,5 +28,5 @@ process_file "${CLAMD_SETTINGS_CSV}" /usr/local/etc/clamd.conf
 process_file "${FRESHCLAM_SETTINGS_CSV}" /usr/local/etc/freshclam.conf
 
 # start in background
-freshclam -d &
+freshclam --stdout --show-progress &
 clamd 

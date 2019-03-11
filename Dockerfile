@@ -35,10 +35,9 @@ RUN mkdir /var/run/clamav && \
 ADD ./*.conf /usr/local/etc/
 RUN chown clamav:clamav -R /usr/local/etc/
 
-ADD eicar.com /
 ADD ./readyness.sh /
 
-RUN chown clamav:clamav /eicar.com /readyness.sh
+RUN chown clamav:clamav /readyness.sh
 
 USER 1000
 
